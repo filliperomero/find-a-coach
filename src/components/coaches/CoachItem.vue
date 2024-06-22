@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
-import { defineProps, computed } from 'vue'
+import { computed } from 'vue'
 
 const route = useRoute()
-const props = defineProps<{ 
-  id: string,
-  firstName: string,
-  lastName: string,
-  rate: number,
+const props = defineProps<{
+  id: string
+  firstName: string
+  lastName: string
+  rate: number
   areas: string[]
 }>()
 

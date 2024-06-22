@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
-import { defineProps, withDefaults, type HTMLAttributes } from 'vue'
-import { type ButtonVariants, buttonVariants } from './BaseButton';
+import { type HTMLAttributes } from 'vue'
+import { type ButtonVariants, buttonVariants } from './BaseButton'
 import { cn } from '@/lib/utils'
 
 interface Props {
