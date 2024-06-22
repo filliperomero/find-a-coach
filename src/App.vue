@@ -4,10 +4,10 @@ import Header from './components/layout/Header.vue'
 </script>
 
 <template>
-  <div class="dark:bg-slate-800 h-screen dark:text-gray-200">
+  <div class="h-screen">
     <Header />
 
-    <main class="flex flex-col bg-slate-800">
+    <main class="flex flex-col">
       <RouterView />
     </main>
   </div>
