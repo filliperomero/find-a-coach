@@ -1,26 +1,21 @@
 <script setup lang="ts">
-let filters = {
+import { reactive } from 'vue'
+const filters = reactive({
   frontend: true,
   backend: true,
   career: true
-}
+})
 
 const emit = defineEmits({
-  'change-filter': ({ filters }) => {
-    return filters
-  }
+  'change-filter': ({ filters }) => filters
 })
 
 function setFilter(event) {
   const inputId = event.target.id
   const isActive = event.target.checked
 
-  filters = {
-    ...filters,
-    [inputId]: isActive
-  }
+  filters[inputId] = isActive
 
-  console.log(filters)
   emit('change-filter', filters)
 }
 </script>
@@ -34,7 +29,7 @@ function setFilter(event) {
     </div> -->
     <div class="flex flex-col gap-2">
       <span class="flex items-center gap-2">
-        <input id="frontend" type="checkbox" @change="setFilter" />
+        <input id="frontend" type="checkbox" :checked="filters.frontend" @change="setFilter" />
         <label for="frontend">Frontend</label>
       </span>
       <!-- <div class="flex space-x-2 items-center">
@@ -42,7 +37,7 @@ function setFilter(event) {
         <label for="backend">Backend</label>
       </div> -->
       <span class="flex items-center gap-2">
-        <input id="backend" type="checkbox" @change="setFilter" />
+        <input id="backend" type="checkbox" :checked="filters.backend" @change="setFilter" />
         <label for="backend">Backend</label>
       </span>
       <!-- <div class="flex space-x-2 items-center">
@@ -50,7 +45,7 @@ function setFilter(event) {
         <label for="career">Career</label>
       </div> -->
       <spa class="flex items-center gap-2">
-        <input id="career" type="checkbox" @change="setFilter" />
+        <input id="career" type="checkbox" :checked="filters.career" @change="setFilter" />
         <label for="career">Career</label>
       </spa>
     </div>

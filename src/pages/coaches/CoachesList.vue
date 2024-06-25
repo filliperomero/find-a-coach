@@ -6,9 +6,9 @@ import { computed, reactive } from 'vue'
 
 const store = useCoachesStore()
 let activeFilters = reactive({
-  frontend: false,
-  backend: false,
-  career: false
+  frontend: true,
+  backend: true,
+  career: true
 })
 
 function setFilters(filters) {
